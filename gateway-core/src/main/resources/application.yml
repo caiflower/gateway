@@ -1,0 +1,18 @@
+server:
+  port: 8888
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: caiflower-cloud-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${bootstrap.spring.cloud.naocs.discovery.server-addr:127.0.0.1:8848}
+        username: ${bootstrap.spring.cloud.naocs.discovery.username:naocs}
+        password: ${bootstrap.spring.cloud.naocs.discovery.password:naocs}
+  redis:
+    port: ${bootstrap.spring.redis.port:6379}
+    host: ${bootstrap.spring.redis.host:127.0.0.1}
+    password: ${bootstrap.spring.redis.password:root}
+    database: ${bootstrap.redis.database:0}
